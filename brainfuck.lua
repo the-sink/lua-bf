@@ -38,7 +38,7 @@ bf.evaluate = function(code)
 		elseif char == "." then output = output .. string.char(memory[pointer])
 		elseif char == "," then memory[pointer] = io.read("*number")
 		elseif char == "[" then table.insert(loopIndices, i)
-		elseif char == "]" then if memory[pointer] ~= 0 then i = loopIndices[#loopIndices]-1 else table.remove(loopIndices, #loopIndices) end
+		elseif char == "]" then if memory[pointer] ~= 0 then i = loopIndices[#loopIndices] + 1 else table.remove(loopIndices, #loopIndices) end
 		end
 	end
 	
