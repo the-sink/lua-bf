@@ -1,4 +1,4 @@
-local  bf = {}
+local bf = {}
 local memory = {}
 local pointer = 1
 local loopIndices = {}
