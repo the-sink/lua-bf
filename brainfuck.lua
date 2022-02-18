@@ -24,11 +24,11 @@ bf.evaluate = function(code)
 		if i > length then break end
 		local char = string.sub(code, i, i)
 
-		if char == ">" then pointer += 1 if pointer > memoryMax then pointer = 0 end
-		elseif char == "<" then pointer -= 1 if pointer < 1 then pointer = 1 end
-		elseif char == "+" then memory[pointer] += 1
-		elseif char == "-" then memory[pointer] -= 1
-		elseif char == "." then output ..= string.char(memory[pointer])
+		if char == ">" then pointer = pointer + 1 if pointer > memoryMax then pointer = 0 end
+		elseif char == "<" then pointer pointer - 1 if pointer < 1 then pointer = 1 end
+		elseif char == "+" then memory[pointer] = memory[pointer] + 1
+		elseif char == "-" then memory[pointer] = memory[pointer] - 1
+		elseif char == "." then output = output .. string.char(memory[pointer])
 		elseif char == "," then -- TODO
 		elseif char == "[" then table.insert(loopIndices, i)
 		elseif char == "]" then if memory[pointer] ~= 0 then i = loopIndices[#loopIndices] continue else table.remove(loopIndices, #loopIndices) end
