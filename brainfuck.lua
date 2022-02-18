@@ -5,6 +5,11 @@ local loopIndices = {}
 
 local memoryMax = 29999
 
+local outputObject = { -- TODO
+	output = "";
+	bytes = {};
+}
+
 bf.clearMemory = function()
   for i = 0, memoryMax do
     memory[i] = 0
